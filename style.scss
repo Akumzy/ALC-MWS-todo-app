@@ -98,6 +98,12 @@ details {
 }
 .todos {
   height: fit-content;
+  &#completed > .todo-card {
+    h3 {
+      text-decoration: line-through;
+      font-style: italic;
+    }
+  }
 }
 .todo-card {
   height: fit-content;
@@ -125,6 +131,9 @@ details {
         background-color: rgba(#000, 0.05);
       }
     }
+  }
+  h3 {
+    color: $blue;
   }
   h3,
   p {
