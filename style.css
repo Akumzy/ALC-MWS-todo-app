@@ -148,6 +148,11 @@ details:not(:last-child) {
   height: fit-content;
 }
 
+.todos#completed > .todo-card h3 {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
 .todo-card {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -191,6 +196,10 @@ details:not(:last-child) {
 
 .todo-card > *:last-child > span:hover {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.todo-card h3 {
+  color: #2362d6;
 }
 
 .todo-card h3,
