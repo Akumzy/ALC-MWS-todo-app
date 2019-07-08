@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex items-center">
+    <div id="app">
+      <header class="flex justify-between items-center">
+        <span>ALC-MWS TODO</span>
+        <button id="openModal" class="new-button flex justify-center items-center button-blue">
+          <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24" class="icon">
+            <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
+          </svg>
+          &nbsp;
+          <span>Add task</span>
+        </button>
+      </header>
+      <main class="flex flex-col">
+        <details open>
+          <summary>
+            In progress
+          </summary>
+          <div class="todos" id="inProgress">
+            <div class="todo-card flex">
+              <div class="flex justify-center items-center"><input type="checkbox" name="" id="" /></div>
+              <div class="flex-1">
+                <h3>Lorem, ipsum.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, fuga.</p>
+              </div>
+              <div class="flex justify-center items-center">
+                <span title="Edit"
+                  ><svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                      d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary>
+            Completed
+          </summary>
+          <div class="todos" id="competed">
+            <div class="todo-card flex">
+              <div class="flex justify-center items-center"><input type="checkbox" name="" id="" /></div>
+              <div class="flex-1">
+                <h3>Lorem, ipsum.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, fuga.</p>
+              </div>
+              <div class="flex justify-center items-center">
+                <span title="Delete"
+                  ><svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                      d="M9,3V4H4V6H5V19C5,20.1 5.9,21 7,21H17C18.1,21 19,20.1 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+                    >
+                      <title>Delete</title>
+                    </path>
+                  </svg></span
+                >
+              </div>
+            </div>
+          </div>
+        </details>
+      </main>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="flex modal-close">
+          <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+            ></path>
+          </svg>
+        </span>
+        <form class="form">
+          <h2 style="margin-top: 0%">New Todo</h2>
+          <div>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <br />
+          <div>
+            <label for="description">Title</label>
+            <textarea name="description" id="description" rows="10"> </textarea>
+          </div>
+          <br>
+          <div class="flex justify-end">
+            <button type="submit" class="save-button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

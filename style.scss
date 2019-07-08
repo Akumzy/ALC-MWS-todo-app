@@ -1,0 +1,185 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #eee;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+button {
+  border: none;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+$blue: #2362d6;
+$app-width: 400px;
+// Use this to generates flex-box utils
+$flex-dimensions: center, end, start;
+@each $pos in $flex-dimensions {
+  $val: $pos;
+  @if $pos == end {
+    $val: flex-#{$pos};
+  }
+
+  .items-#{$pos} {
+    align-items: $val;
+  }
+  .justify-#{$pos} {
+    justify-content: $val;
+  }
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-between {
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+
+#app {
+  width: $app-width;
+  height: 90%;
+  margin: auto;
+  margin-top: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba($blue, 0.5);
+  border: 2px solid #eee;
+  header {
+    padding: 0 1em;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+  }
+  main {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+  }
+}
+.new-button {
+  padding: 0.5em 1em;
+  box-shadow: 0 0 3px rgba($blue, 0.5);
+  background-color: $blue;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  &:active {
+    transform: scale(1.05);
+  }
+}
+.flex {
+  display: flex;
+}
+summary {
+  padding: 1em 5px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+details {
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+.todos {
+  height: fit-content;
+}
+.todo-card {
+  height: fit-content;
+  transition: 200ms all;
+  &:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.169);
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+  & > *:first-child {
+    width: 50px;
+  }
+  & > *:last-child {
+    width: 50px;
+    > span {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(#000, 0.05);
+      }
+    }
+  }
+  h3,
+  p {
+    margin: 5px 0;
+  }
+}
+.form {
+  width: 100%;
+  padding: 1em;
+  overflow: hidden;
+  input,
+  textarea {
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #eee;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .save-button {
+    padding: 10px 1.5em;
+    background-color: $blue;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#fff, 0.4);
+  justify-content: center;
+  overflow-y: auto;
+  display: none;
+  &.open {
+    display: flex;
+  }
+  &-content {
+    width: $app-width;
+    height: fit-content;
+    background-color: #fff;
+    border: 2px solid #eee;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px;
+    padding: 1em;
+    margin-top: 2em;
+    border-radius: 5px;
+    position: relative;
+  }
+  &-close {
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    padding: 5px;
+  }
+}
