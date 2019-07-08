@@ -1,0 +1,6 @@
+node_modules
+main.js
+package.json
+yarn.lock
+error.log
+ignore.txt
